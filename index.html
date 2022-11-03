@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    <script src="js/form-validation.js"></script>
+    <script src="js/app.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="paletteSelect">
+        <h4>Pasirinkite formos spalvą:</h4>
+        <select onchange="changeColor(this);" class="color">
+          <option>Pagrindinė</option>
+          <option id="red" value="grayPalette">Pilka</option>
+          <option id="green" value="greenPalette">Žalia</option>
+          <option id="blue" value="bluePalette">Mėlyna</option>
+        </select>
+      </div>
+      <form action="" name="registration" id="paletteColor">
+        <label for="firstname">Vardas<span>*</span></label>
+        <input type="text" name="firstname" id="firstname" placeholder="John" />
+
+        <label for="lastname">Pavardė<span>*</span></label>
+        <input type="text" name="lastname" id="lastname" placeholder="Doe" />
+
+        <label
+          for="phone"
+          style="display: flex; justify-content: space-between"
+        >
+          <div
+            style="
+              display: flex;
+
+              align-items: flex-end;
+            "
+          >
+            Telefono Numeris<span>*</span>
+          </div>
+          <span title="Šiuo numeriu su Jumis susisieks konsultantas"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              height="20px"
+              width="20px"
+              id="tooltip"
+            >
+              <path
+                d="m14 17h-0.13-3.78-0.09v-0.55l0.92-0.25s0.07 0 0.07-0.08 0-0.44 0-0.83v-2.07-1.49l-1.13-0.73-0.07-0.46h3.13l0.16 0.12v0.07 1.88 2.39 1.06s0 0.09 0.07 0.1l0.89 0.25z"
+              />
+              <path
+                d="M13.06,7.52a1.07,1.07,0,0,1-.33.81,1.24,1.24,0,0,1-1.62,0,1.06,1.06,0,0,1-.31-.77,1,1,0,0,1,.33-.81,1.2,1.2,0,0,1,.84-.3,1.16,1.16,0,0,1,.78.27A1,1,0,0,1,13.06,7.52Z"
+              />
+              <path
+                d="m12 2c-5.5151 0-10 4.4849-10 10s4.4849 10 10 10 10-4.4849 10-10-4.4849-10-10-10zm0 1.3008c4.8126 0 8.7012 3.8866 8.7012 8.6992s-3.8886 8.7012-8.7012 8.7012-8.6992-3.8886-8.6992-8.7012 3.8866-8.6992 8.6992-8.6992z"
+              /></svg></span
+        ></label>
+
+        <input type="tel" name="phone" id="phone" placeholder="+370XXXXXXXX" />
+
+        <label for="date1"
+          >Paslaugos teikimo pradžios data:<span>*</span></label
+        >
+        <input type="text" id="date1" name="date1" />
+
+        <label for="date2"
+          >Paslaugos teikimo pabaigos data:<span>*</span></label
+        >
+        <input type="text" id="date2" name="date2" onchange="dateSelect()" />
+
+        <h3 id="ans"></h3>
+
+        <div class="subscribe">
+          <label for="chkSubscribe" class="checkbox">
+            Prenumeruoti naujienlaiškį</label
+          >
+          <input type="checkbox" id="chkSubscribe" />
+        </div>
+
+        <div style="display: none" id="subEmail">
+          <label for="email">Elektroninis paštas<span>*</span></label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="john@doe.com"
+          />
+        </div>
+
+        <button type="submit" id="submitBtn">Registruotis</button>
+      </form>
+    </div>
+  </body>
+</html>
